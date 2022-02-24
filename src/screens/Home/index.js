@@ -3,7 +3,7 @@ import {View, Text, ImageBackground, Image, Pressable} from 'react-native';
 import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
-export const HomeScreen = props => {
+const HomeScreen = props => {
   return (
     <View>
       <Pressable
@@ -30,3 +30,5 @@ export const HomeScreen = props => {
     </View>
   );
 };
+
+export default HomeScreen;
