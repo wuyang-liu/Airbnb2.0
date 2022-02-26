@@ -12,6 +12,8 @@ import {SafeAreaView, StatusBar} from 'react-native';
 import HomeScreen from './src/screens/Home';
 import Post from './src/components/Post';
 import Feed from './assets/data/feed';
+import SearchResultsScreen from './src/screens/SearchResults';
+import LocationSearch from './src/screens/LocationSearch';
 
 const App: () => Node = () => {
   return (
@@ -19,9 +21,11 @@ const App: () => Node = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         {/*<HomeScreen />*/}
-        {Feed.map(post => (
-          <Post key={post.id} post={post} />
-        ))}
+        {/*{Feed.map(post => (*/}
+        {/*  <Post key={post.id} post={post} />*/}
+        {/*))}*/}
+        {/*<SearchResultsScreen />*/}
+        <LocationSearch />
       </SafeAreaView>
     </>
   );
