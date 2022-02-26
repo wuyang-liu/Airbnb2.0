@@ -7,28 +7,16 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 
-import HomeScreen from './src/screens/Home';
-import Post from './src/components/Post';
-import Feed from './assets/data/feed';
-import SearchResultsScreen from './src/screens/SearchResults';
-import LocationSearch from './src/screens/LocationSearch';
-import GuestScreen from './src/screens/Guests';
+import 'react-native-gesture-handler';
+import Router from './src/navigation/Router';
 
 const App: () => Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        {/*<HomeScreen />*/}
-        {/*{Feed.map(post => (*/}
-        {/*  <Post key={post.id} post={post} />*/}
-        {/*))}*/}
-        {/*<SearchResultsScreen />*/}
-        {/*<LocationSearch />*/}
-        <GuestScreen />
-      </SafeAreaView>
+      <Router />
     </>
   );
 };

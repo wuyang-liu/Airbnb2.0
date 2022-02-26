@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: 'white',
     width: 200,
+    marginTop: 25,
     marginLeft: 25,
     height: 40,
     borderRadius: 15,
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     position: 'absolute',
-    top: 30,
+    top: 50,
     zIndex: 100,
   },
   searchButtonText: {
