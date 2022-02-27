@@ -9,14 +9,14 @@ const CustomMarker = props => {
     <Marker coordinate={coordinate} onPress={onPress}>
       <View
         style={{
-          backgroundColor: isSelected ? 'black' : 'white',
+          backgroundColor: isSelected ? '#f15454' : 'white',
           padding: 5,
           borderRadius: 20,
           borderWidth: 1,
-          borderColor: 'grey',
+          borderColor: '#f15454',
         }}>
         <Text
-          style={{fontWeight: 'bold', color: isSelected ? 'white' : 'black'}}>
+          style={{fontWeight: 'bold', color: isSelected ? 'white' : '#f15454'}}>
           ${price}
         </Text>
       </View>
