@@ -63,7 +63,9 @@ const SearchResultsMap = props => {
         <FlatList
           ref={flatList}
           data={places}
-          renderItem={({item}) => <PostCarouselItem post={item} />}
+          renderItem={({item}) => (
+            <PostCarouselItem key={item.id} post={item} />
+          )}
           horizontal
           showsHorizontalScrollIndicator={false}
           snapToInterval={width - 60}

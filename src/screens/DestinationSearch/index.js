@@ -15,7 +15,7 @@ const DestinationSearch = props => {
     <View style={styles.container}>
       <View style={{height: 500}}>
         <GooglePlacesAutocomplete
-          placeholder="Where are you going?"
+          placeholder="Where is your next stay?"
           onPress={(data, details = null) => {
             // 'details' is provided when fetchDetails = true
             console.log(data, details);
@@ -24,6 +24,9 @@ const DestinationSearch = props => {
           fetchDetails
           styles={{
             textInput: styles.textInput,
+          }}
+          textInputProps={{
+            placeholderTextColor: '#a3a6a3',
           }}
           query={{
             key: 'AIzaSyDCYFXCvSPpeY9r7MFIF2lmZzO8QOT8_A4',

@@ -7,7 +7,10 @@ import Post from '../../components/Post';
 const SearchResultsScreen = props => {
   return (
     <View>
-      <FlatList data={feed} renderItem={({item}) => <Post post={item} />} />
+      <FlatList
+        data={feed}
+        renderItem={({item}) => <Post key={item.id} post={item} />}
+      />
     </View>
   );
 };
