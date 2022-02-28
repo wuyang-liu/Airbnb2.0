@@ -10,6 +10,11 @@
       "StackName": "amplify-airbnb-dev-05744",
       "StackId": "arn:aws:cloudformation:us-west-1:749373406990:stack/amplify-airbnb-dev-05744/80a57c80-9874-11ec-a505-060854b9c2a3",
       "AmplifyAppId": "d11azsegjcvpo1"
+    },
+    "categories": {
+      "auth": {
+        "airbnb687181c4": {}
+      }
     }
   }
 }

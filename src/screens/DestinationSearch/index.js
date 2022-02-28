@@ -18,7 +18,6 @@ const DestinationSearch = props => {
           placeholder="Where is your next stay?"
           onPress={(data, details = null) => {
             // 'details' is provided when fetchDetails = true
-            console.log(data, details);
             navigation.navigate('Guests');
           }}
           fetchDetails
