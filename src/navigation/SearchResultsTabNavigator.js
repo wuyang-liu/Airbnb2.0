@@ -10,7 +10,7 @@ const Tab = createMaterialTopTabNavigator();
 
 const SearchResultsTabNavigator = props => {
   const route = useRoute();
-  const {totalGuests} = route.params;
+  const {totalGuests, viewport} = route.params;
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -18,13 +18,21 @@ const SearchResultsTabNavigator = props => {
       const postsResult = await API.graphql(
         graphqlOperation(listPosts, {
           filter: {
-            maxGuests: {
-              ge: totalGuests,
+            and: {
+              maxGuests: {
+                ge: totalGuests,
+              },
+              latitude: {
+                between: [viewport.southwest.lat, viewport.northeast.lat],
+              },
+              longitude: {
+                between: [viewport.southwest.lng, viewport.northeast.lng],
+              },
             },
           },
         }),
       );
-      // console.log(postsResult);
+      console.log(postsResult);
       setPosts(postsResult.data.listPosts.items);
     };
     fetchPosts().catch(error => console.log(error));

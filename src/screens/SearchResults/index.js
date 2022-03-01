@@ -7,35 +7,10 @@ import {API, graphqlOperation} from 'aws-amplify';
 import {listPosts} from '../../graphql/queries';
 
 const SearchResultsScreen = props => {
-  // const [posts, setPosts] = useState([]);
   const {posts} = props;
-  console.log('posts', posts);
-  // const {totalGuests} = props;
-  // console.log(totalGuests);
-
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     try {
-  //       const postsResult = await API.graphql(
-  //         graphqlOperation(listPosts, {
-  //           filter: {
-  //             maxGuests: {
-  //               ge: totalGuests,
-  //             },
-  //           },
-  //         }),
-  //       );
-  //       // console.log(postsResult);
-  //       setPosts(postsResult.data.listPosts.items);
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   };
-  //   fetchPosts();
-  // }, []);
 
   return (
-    <View>
+    <View style={{height: '100%'}}>
       <FlatList
         data={posts}
         renderItem={({item}) => <Post key={item.id} post={item} />}

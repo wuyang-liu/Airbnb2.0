@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import Post from '../../components/Post';
+import {View} from 'react-native';
 
 import places from '../../../assets/data/feed';
 import DetailedPost from '../../components/DetailedPost';
