@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View, Text, Pressable} from 'react-native';
+import React from 'react';
+import {Pressable, Text, View} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 
@@ -118,6 +118,9 @@ const GuestScreen = props => {
             screen: 'Explore',
             params: {
               screen: 'SearchResults',
+              params: {
+                totalGuests: adults + children,
+              },
             },
           })
         }

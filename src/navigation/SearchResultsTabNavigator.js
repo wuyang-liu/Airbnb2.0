@@ -1,11 +1,35 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import SearchResultsScreen from '../screens/SearchResults';
 import SearchResultsMap from '../screens/SearchResultsMap';
+import {useRoute} from '@react-navigation/native';
+import {API, graphqlOperation} from 'aws-amplify';
+import {listPosts} from '../graphql/queries';
 
 const Tab = createMaterialTopTabNavigator();
 
 const SearchResultsTabNavigator = props => {
+  const route = useRoute();
+  const {totalGuests} = route.params;
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const postsResult = await API.graphql(
+        graphqlOperation(listPosts, {
+          filter: {
+            maxGuests: {
+              ge: totalGuests,
+            },
+          },
+        }),
+      );
+      // console.log(postsResult);
+      setPosts(postsResult.data.listPosts.items);
+    };
+    fetchPosts().catch(error => console.log(error));
+  }, []);
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -14,8 +38,12 @@ const SearchResultsTabNavigator = props => {
           backgroundColor: '#f15454',
         },
       }}>
-      <Tab.Screen name={'list'} component={SearchResultsScreen} />
-      <Tab.Screen name={'map'} component={SearchResultsMap} />
+      <Tab.Screen name={'list'}>
+        {() => <SearchResultsScreen posts={posts} />}
+      </Tab.Screen>
+      <Tab.Screen name={'map'}>
+        {() => <SearchResultsMap posts={posts} />}
+      </Tab.Screen>
     </Tab.Navigator>
   );
 };
