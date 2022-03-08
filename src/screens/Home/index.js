@@ -13,7 +13,7 @@ const HomeScreen = props => {
         style={styles.searchButton}
         onPress={() => navigation.navigate('Destination Search')}>
         <Fontisto name="search" size={25} color={'#f15454'} />
-        <Text style={styles.buttonText}>Where is your next stay?</Text>
+        <Text style={styles.buttonText}>Where is your next stop?</Text>
       </Pressable>
 
       <ImageBackground

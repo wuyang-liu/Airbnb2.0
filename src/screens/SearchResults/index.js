@@ -8,6 +8,7 @@ import {listPosts} from '../../graphql/queries';
 
 const SearchResultsScreen = props => {
   const {posts} = props;
+  console.log('in SearchResultsScreenPa', posts);
 
   return (
     <View style={{height: '100%'}}>

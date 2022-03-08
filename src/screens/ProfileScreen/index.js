@@ -14,13 +14,21 @@ const ProfileScreen = props => {
   return (
     <View
       style={{
+        width: '100%',
         height: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}>
       <Pressable
-        style={{width: '100%', height: 40, backgroundColor: '#c3c3c3'}}
+        style={{
+          marginTop: 300,
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '60%',
+          height: 40,
+          backgroundColor: 'rgba(241,84,84,0.64)',
+        }}
         onPress={logout}>
         <Text>Log out</Text>
       </Pressable>
