@@ -9,7 +9,7 @@ const PostCarouselItem = props => {
   const navigation = useNavigation();
   const onPostPressed = () => {
     navigation.navigate('Post', {
-      postId: post.id,
+      post: post,
     });
   };
   return (

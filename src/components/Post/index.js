@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, Pressable} from 'react-native';
+import {Image, Pressable, Text} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 
@@ -10,7 +10,7 @@ const Post = props => {
   const navigation = useNavigation();
 
   const goToPostPage = () => {
-    navigation.navigate('Post', {postId: post.id});
+    navigation.navigate('Post', {post: post});
   };
 
   return (
@@ -33,7 +33,7 @@ const Post = props => {
         <Text style={styles.oldPrice}>${post.oldPrice} </Text>
         <Text style={styles.price}>${post.newPrice}</Text>/ night
       </Text>
-      <Text style={styles.totalPrice}>${post.newPrice * 7} total</Text>
+      <Text style={styles.totalPrice}>${post.newPrice * days} total</Text>
     </Pressable>
   );
 };
